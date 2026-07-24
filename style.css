@@ -8,31 +8,31 @@
 
 body {
   min-height: 100vh;
-  /* Replace 'background.jpg' with the path or URL to your image */
-  background-image: url('\img\web-bg.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('web-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #333;
+  background-color: #000; /* Fallback solid black */
+  color: #ffffff;
 }
 
-/*   2. Centered Transparent Header */
+/*   2. Centered Dark Transparent Header */
 .site-header {
   position: sticky;
-  top: 20px; /* Gives space from the top of the viewport */
+  top: 20px;
   width: 90%;
   max-width: 1100px;
   margin: 0 auto;
   
-  /* Slight transparency with glassmorphism blur */
-  background-color: rgba(255, 255, 255, 0.85);
+  /* Dark semi-transparency with glassmorphism blur */
+  background-color: rgba(15, 15, 15, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   
   display: flex;
   flex-direction: column;
@@ -44,13 +44,13 @@ body {
 .site-title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #ffffff;
   margin-bottom: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/*    3. Dropdown Navigation Tabs */
+/*   3. Dropdown Navigation Tabs */
 .main-nav {
   width: 100%;
 }
@@ -62,7 +62,6 @@ body {
   gap: 1rem;
 }
 
-/* Top-level Nav Links */
 .nav-item {
   position: relative;
 }
@@ -71,7 +70,7 @@ body {
   display: block;
   padding: 0.6rem 1.2rem;
   text-decoration: none;
-  color: #2c3e50;
+  color: #e0e0e0;
   font-weight: 600;
   border-radius: 6px;
   transition: all 0.3s ease;
@@ -79,8 +78,8 @@ body {
 
 .nav-link:hover,
 .nav-item:hover > .nav-link {
-  background-color: rgba(0, 0, 0, 0.08);
-  color: #007bff;
+  background-color: rgba(255, 215, 0, 0.1);
+  color: #ffd700; 
 }
 
 /* Dropdown Menu Box */
@@ -90,12 +89,13 @@ body {
   left: 50%;
   transform: translateX(-50%);
   list-style: none;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(20, 20, 20, 0.95);
   backdrop-filter: blur(8px);
   min-width: 180px;
   padding: 0.5rem 0;
   border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   
   /* Hidden state */
   opacity: 0;
@@ -116,24 +116,29 @@ body {
   display: block;
   padding: 0.6rem 1.2rem;
   text-decoration: none;
-  color: #333;
+  color: #e0e0e0;
   font-size: 0.95rem;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
-/*   4. Centered Transparent Footer */
+
+.dropdown-menu li a:hover {
+  background-color: rgba(255, 215, 0, 0.15);
+  color: #ffd700;
+}
+
+/*   4. Centered Dark Transparent Footer */
 .site-footer {
   margin: 3rem auto 2rem auto;
   width: 90%;
   max-width: 1100px;
   
-  /* Matches header transparency and glassmorphism style */
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(15, 15, 15, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   
   padding: 1.5rem 2rem;
   display: flex;
@@ -149,7 +154,7 @@ body {
 }
 
 .footer-text p {
-  color: #4a5568;
+  color: #cccccc;
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -163,7 +168,7 @@ body {
 
 .social-link {
   text-decoration: none;
-  color: #2c3e50;
+  color: #e0e0e0;
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.4rem 0.8rem;
@@ -172,16 +177,12 @@ body {
 }
 
 .social-link:hover {
-  background-color: rgba(0, 123, 255, 0.1);
-  color: #007bff;
+  background-color: rgba(255, 215, 0, 0.1);
+  color: #ffd700; 
 }
 
 /* Copyright Notice */
 .footer-copyright {
   font-size: 0.8rem;
-  color: #718096;
-}
-.dropdown-menu li a:hover {
-  background-color: rgba(0, 123, 255, 0.1);
-  color: #007bff;
+  color: #888888;
 }

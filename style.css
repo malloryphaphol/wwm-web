@@ -1,0 +1,127 @@
+/*   1. Base & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  /* Replace 'background.jpg' with the path or URL to your image */
+  background-image: url('\img\web-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #333;
+}
+
+/*   2. Centered Transparent Header */
+.site-header {
+  position: sticky;
+  top: 20px; /* Gives space from the top of the viewport */
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  
+  /* Slight transparency with glassmorphism blur */
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  z-index: 1000;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*    3. Dropdown Navigation Tabs */
+.main-nav {
+  width: 100%;
+}
+
+.nav-tabs {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Top-level Nav Links */
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-item:hover > .nav-link {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #007bff;
+}
+
+/* Dropdown Menu Box */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  min-width: 180px;
+  padding: 0.5rem 0;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  
+  /* Hidden state */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(10px);
+  transition: all 0.3s ease;
+}
+
+/* Show Dropdown on Hover */
+.nav-item:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Dropdown Items */
+.dropdown-menu li a {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+}

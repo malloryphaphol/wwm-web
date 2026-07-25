@@ -186,3 +186,133 @@ body {
   font-size: 0.8rem;
   color: #888888;
 }
+/* ==========================================================================
+   5. Scrollable 4-Column Layout
+   ========================================================================== */
+.content-container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  height: 60vh; /* Fixed height so columns can scroll independently */
+}
+
+.scroll-column {
+  background-color: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  padding: 1.2rem;
+  
+  /* Independent scrolling */
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+/* Custom Scrollbar for Columns */
+.scroll-column::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll-column::-webkit-scrollbar-track {
+  background: rgba(250, 250, 250, 0.05);
+  border-radius: 8px;
+}
+
+.scroll-column::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.4); /* Subtle Gold scrollbar */
+  border-radius: 8px;
+}
+
+.scroll-column::-webkit-scrollbar-thumb:hover {
+  background: #ffd700;
+}
+
+.column-title {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+/*   6. Dropdown Text & Image Accordions */
+.custom-dropdown {
+  background-color: rgba(30, 30, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.custom-dropdown[open] {
+  border-color: rgba(255, 215, 0, 0.3);
+}
+
+.dropdown-header {
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  cursor: pointer;
+  list-style: none; /* Hides default arrow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+/* Custom Gold Dropdown Indicator Arrow */
+.dropdown-header::after {
+  content: "▾";
+  color: #888;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.custom-dropdown[open] .dropdown-header::after {
+  transform: rotate(180deg);
+  color: #ffd700;
+}
+
+.dropdown-header:hover {
+  color: #ffd700; /* Turns Gold on Hover */
+  background-color: rgba(255, 215, 0, 0.08);
+}
+
+.dropdown-content {
+  padding: 1rem;
+  color: #cccccc;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-top: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 900px) {
+  .content-container {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .content-container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}

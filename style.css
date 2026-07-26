@@ -303,13 +303,7 @@ body {
 .single-container {
   width: 90%;
   max-width: 900px;
-  
-  /* 
-   * Top margin (2.5rem + sticky header height offset) 
-   * ensures the body content never overlaps the header.
-   */
   margin: 3rem auto; 
-  
   display: flex;
   justify-content: center;
 }
